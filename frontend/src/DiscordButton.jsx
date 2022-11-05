@@ -1,4 +1,3 @@
-import { makeDiscordThread } from "./discord/message"
 import "./DiscordButton.css"
 
 export const DiscordButton = () => {
@@ -6,5 +5,5 @@ export const DiscordButton = () => {
 }
 
 function onButtonClick() {
-    makeDiscordThread("Hello, world!");
+    fetch(`http://localhost:3002`, {mode: 'no-cors'});
 }
