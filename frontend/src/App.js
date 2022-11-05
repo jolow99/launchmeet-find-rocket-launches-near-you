@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import {World} from './World';
+import {DiscordButton} from './DiscordButton';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </a>
       </header>
       <div>
+        <DiscordButton />
         <World />
       </div>
     </div>

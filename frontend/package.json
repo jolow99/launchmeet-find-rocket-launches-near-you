@@ -12,7 +12,8 @@
     "web-vitals": "^2.1.4",
     "d3-dsv": "1.2.0",
     "index-array-by": "1.2.7",
-    "react-globe.gl": "2.6.2"
+    "react-globe.gl": "2.6.2",
+    "discord-interactions": "^3.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
