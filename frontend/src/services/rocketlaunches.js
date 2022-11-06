@@ -9,9 +9,9 @@ export const getRocketLaunches = async () => {
     var Airtable = require('airtable');
     Airtable.configure({
         endpointUrl: 'https://api.airtable.com',
-        apiKey: 'keyZpRe1ogEkf8nVw'
+        apiKey: process.env.REACT_APP_AIRTABLE_KEY
     });
-    var base = Airtable.base('appFmVqJ14iFkUNbK');
+    var base = Airtable.base(process.env.REACT_APP_AIRTABLE_BASE);
 
     base('Table 2').create([
         {

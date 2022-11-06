@@ -1,12 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { getRocketLaunches } from "./services/rocketlaunches";
 import getGeocoding from "./services/geocoding";
-
-// import indexBy from "index-array-by";
-// import { csvParseRows } from "d3-dsv";
-
-
-
 import Globe from "react-globe.gl";
 
 export const NewWorld = ({setDataPoint}) => {
@@ -55,7 +49,6 @@ export const NewWorld = ({setDataPoint}) => {
     <p>Description: ${d.desc}</p>
     <p>Latitude: ${d.lat}</p>
     <p>Longitude: ${d.lng}</p>
-    <button onClick="alert('hi')">Click me</button>
 `
  
   } 
@@ -66,29 +59,8 @@ export const NewWorld = ({setDataPoint}) => {
       pointsData={coordinates}
       pointLabel={getToolTip}
       onPointClick={setToolTip}
-      // labelLabel = {getToolTip}
-
-    // // globeImageUrl=""
-    // showAtmosphere={false}
-    // arcsData={routes}
-    // arcLabel={d => `${d.airline}: ${d.srcIata} &#8594; ${d.dstIata}`}
-    // arcStartLat={d => +d.srcAirport.lat}
-    // arcStartLng={d => +d.srcAirport.lng}
-    // arcEndLat={d => +d.dstAirport.lat}
-    // arcEndLng={d => +d.dstAirport.lng}
-    // arcDashLength={0.5}
-    // arcDashGap={1}
-    // arcDashInitialGap={() => Math.random()}
-    // arcDashAnimateTime={4000}
-    // // arcColor={d => [`rgba(0, 255, 0, ${OPACITY})`, `rgba(255, 0, 0, ${OPACITY})`]}
-    // arcsTransitionDuration={0}
-    // arcStroke={null}
-    // arcColor={() => "#88602333"}
-    // pointsData={airports}
-    // pointColor={() => "orange"}
-    // pointAltitude={0}
-    // pointRadius={0.02}
-    // pointsMerge={true}
+      height={400}
+      width={1000}
     />
   );
 };

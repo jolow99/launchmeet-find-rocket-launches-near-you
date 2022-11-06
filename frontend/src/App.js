@@ -15,9 +15,9 @@ function App() {
   var Airtable = require('airtable');
   Airtable.configure({
     endpointUrl: 'https://api.airtable.com',
-    apiKey: 'keyZpRe1ogEkf8nVw'
+    apiKey: process.env.REACT_APP_AIRTABLE_KEY
   });
-  var base = Airtable.base('appFmVqJ14iFkUNbK');
+  var base = Airtable.base(process.env.REACT_APP_AIRTABLE_BASE);
 
   function handleNameChange(event) {
     setName(event.target.value);
@@ -55,50 +55,51 @@ function App() {
   return (
     <div className="App">
       <div className='flex'>
-        <div style={{ width: "50%" }}>
-          <div className='m-16'>
-            <p className='text-6xl font-bold'>Location:</p>
-            <p className='text-6xl font-thin'>{datapoint.name}</p>
+      <NewWorld setDataPoint={setDatapoint} />
+        <div className=''>
+          <div className='m-4'>
+            <p className=' font-bold'>Location:</p>
+            <p className=' font-thin'>{datapoint.name}</p>
           </div>
-          <div className='m-16'>
-            <p className='text-6xl font-bold'>Description:</p>
-            <p className='text-6xl font-thin'>{datapoint.desc}</p>
+          <div className='m-4'>
+            <p className=' font-bold'>Description:</p>
+            <p className=' font-thin'>{datapoint.desc}</p>
           </div>
-          <div className='m-16'>
-            <p className='text-6xl font-bold'>Latitude:</p>
-            <p className='text-6xl font-thin'>{datapoint.lat}</p>
+          <div className='m-4'>
+            <p className=' font-bold'>Latitude:</p>
+            <p className=' font-thin'>{datapoint.lat}</p>
           </div>
-          <div className='m-16'>
-            <p className='text-6xl font-bold'>Longitude:</p>
-            <p className='text-6xl font-thin'>{datapoint.lng}</p>
+          <div className='m-4'>
+            <p className=' font-bold'>Longitude:</p>
+            <p className=' font-thin'>{datapoint.lng}</p>
           </div>
 
-          <a href="https://discord.gg/bT5DU5nk"> <button className='outline-gray-400 outline-double rounded-xl mt-8 text-4xl p-16'>
+          <a href="https://discord.gg/bT5DU5nk"> <button className='outline-gray-400 outline-double rounded-xl mt-8 p-2'>
             Join Our Discord
           </button> </a>
         </div>
-        <NewWorld setDataPoint={setDatapoint} />
+        
 
       </div>
       <header className="App-header">
 
         {/* Write an introduction of the purpose of this form */}
-        <p className='mt-32'>
+        <p className=''>
           <code>Sign up to receive notifications about rocket launches near you 🚀🚀</code>
         </p>
 
-        <form className='flex flex-col p-32'>
-          <label className='m-8 float-left'>
-            Name
-            <input className='float-right' type="text" onChange={handleNameChange} name="name" />
+        <form className='flex flex-col p-8'>
+          <label className='m-2 float-left'>
+            <span className="text-sm mx-4">Name</span>
+            <input className='float-right w-48' type="text" onChange={handleNameChange} name="name" />
           </label>
-          <label className='m-8 float-left'>
-            Phone Number
-            <input className='float-right' type="text" onChange={handleNumberChange} name="phone" />
+          <label className='m-2 float-left'>
+          <span className="text-sm mx-4">Phone Number</span>
+            <input className='float-right w-48' type="text" onChange={handleNumberChange} name="phone" />
           </label>
-          <label className='m-8 float-left'>
-            Postal Code
-            <input className='float-right' type="text" onChange={handlePostalcodeChange} name="phone" />
+          <label className='m-2 float-left'>
+          <span className="text-sm mx-4">Postal Code</span>
+            <input className='float-right w-48' type="text" onChange={handlePostalcodeChange} name="phone" />
           </label>
           <button className='outline-gray-400 outline-double rounded-xl mt-8' onClick={onFormSubmit}>Submit</button>
         </form>
