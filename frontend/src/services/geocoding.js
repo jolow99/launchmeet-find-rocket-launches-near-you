@@ -4,11 +4,11 @@ let BASE_URL = "http://api.positionstack.com/v1/"
 // query the forward api endpoint and specify the access key and query parameter which is an address
 // naive assumption that the first response from the api is the correct one
 // note: the api returns a list of potential matches
-export default function geocode(address) {
+export default function getGeocoding(address) {
   return fetch(`${BASE_URL}forward?access_key=${AUTH_KEY}&query=${address}`)
     .then(res => res.json())
     .then(data => {
-      return data.data[0]["latitude"], data.data[0]["longitude"]
+      return {"lat": data.data[0]["latitude"], "lng": data.data[0]["longitude"], color: "red", size: 0.2}
     })
 }
 

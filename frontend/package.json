@@ -6,14 +6,16 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "airtable": "^0.11.5",
+    "crypto-browserify": "^3.12.0",
+    "d3-dsv": "1.2.0",
+    "discord-interactions": "^3.2.0",
+    "index-array-by": "1.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-    "d3-dsv": "1.2.0",
-    "index-array-by": "1.2.7",
     "react-globe.gl": "2.6.2",
-    "discord-interactions": "^3.2.0"
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,5 +40,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.2.2"
   }
 }
